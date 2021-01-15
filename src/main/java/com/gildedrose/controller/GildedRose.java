@@ -1,11 +1,11 @@
 package com.gildedrose.controller;
 
-import com.gildedrose.model.Item;
+import com.gildedrose.model.MyItem;
 
 public class GildedRose {
-    private Item[] items;
+    private MyItem[] items;
 
-    public GildedRose(Item[] items) {
+    public GildedRose(MyItem[] items) {
         this.items = items;
     }
 
@@ -62,11 +62,11 @@ public class GildedRose {
         }
     }
 
-	public Item[] getItems() {
+	public MyItem[] getItems() {
 		return items;
 	}
 
-	public void setItems(Item[] items) {
+	public void setItems(MyItem[] items) {
 		this.items = items;
 	}
 }

@@ -1,17 +1,18 @@
 package com.gildedrose;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 import com.gildedrose.controller.GildedRose;
-import com.gildedrose.model.Item;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.gildedrose.model.MyItem;
+import com.gildedrose.model.enums.ItemType;
 
 class GildedRoseTest {
 
     @Test
     void foo() {
-        Item[] items = new Item[] { new Item("foo", 0, 0) };
+        MyItem[] items = new MyItem[] { new MyItem("foo", 0, 0, ItemType.NORMAL) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals("foo", app.getItems()[0].name);
@@ -19,8 +20,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_1Days_dexterityVest() {
-    	Item[] items = new Item[] {
-                new Item("+5 Dexterity Vest", 10, 20)
+		MyItem[] items = new MyItem[] {
+                new MyItem("+5 Dexterity Vest", 10, 20, ItemType.NORMAL)
     	};
     	int days = 1;
     	GildedRose app = new GildedRose(items);
@@ -34,8 +35,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_1Days_agedBrie() {
-    	Item[] items = new Item[] {
-                new Item("Aged Brie", 2, 0)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Aged Brie", 2, 0, ItemType.CONSUMABLE)
     	};
     	int days = 1;
     	GildedRose app = new GildedRose(items);
@@ -49,8 +50,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_1Days_elixirOfTheMongoose() {
-    	Item[] items = new Item[] {
-                new Item("Elixir of the Mongoose", 5, 7)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Elixir of the Mongoose", 5, 7, ItemType.NORMAL)
     	};
     	int days = 1;
     	GildedRose app = new GildedRose(items);
@@ -64,8 +65,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_1Days_sulfurasHandOfRagnaros() {
-    	Item[] items = new Item[] {
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Sulfuras, Hand of Ragnaros", 0, 80, ItemType.LEGENDARY)
     	};
     	int days = 1;
     	GildedRose app = new GildedRose(items);
@@ -79,8 +80,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_1Days_backstagePassesToATAFKAL80ETCConcert() {
-    	Item[] items = new Item[] {
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Backstage passes to a TAFKAL80ETC concert", 15, 20, ItemType.CONSUMABLE_WITH_EXPIRATION)
     	};
     	int days = 1;
     	GildedRose app = new GildedRose(items);
@@ -94,8 +95,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_1Days_conjuredManaCake() {
-    	Item[] items = new Item[] {
-                new Item("Conjured Mana Cake", 3, 6)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Conjured Mana Cake", 3, 6, ItemType.CONJURED)
     	};
     	int days = 1;
     	GildedRose app = new GildedRose(items);
@@ -109,8 +110,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_5Days_dexterityVest() {
-    	Item[] items = new Item[] {
-                new Item("+5 Dexterity Vest", 10, 20)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("+5 Dexterity Vest", 10, 20, ItemType.NORMAL)
     	};
     	int days = 5;
     	GildedRose app = new GildedRose(items);
@@ -124,8 +125,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_5Days_agedBrie() {
-    	Item[] items = new Item[] {
-                new Item("Aged Brie", 2, 0)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Aged Brie", 2, 0, ItemType.CONSUMABLE)
     	};
     	int days = 5;
     	GildedRose app = new GildedRose(items);
@@ -139,8 +140,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_5Days_elixirOfTheMongoose() {
-    	Item[] items = new Item[] {
-                new Item("Elixir of the Mongoose", 5, 7)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Elixir of the Mongoose", 5, 7, ItemType.NORMAL)
     	};
     	int days = 5;
     	GildedRose app = new GildedRose(items);
@@ -154,8 +155,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_5Days_sulfurasHandOfRagnaros() {
-    	Item[] items = new Item[] {
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Sulfuras, Hand of Ragnaros", 0, 80, ItemType.LEGENDARY)
     	};
     	int days = 5;
     	GildedRose app = new GildedRose(items);
@@ -169,8 +170,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_5Days_backstagePassesToATAFKAL80ETCConcert() {
-    	Item[] items = new Item[] {
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Backstage passes to a TAFKAL80ETC concert", 15, 20, ItemType.CONSUMABLE_WITH_EXPIRATION)
     	};
     	int days = 5;
     	GildedRose app = new GildedRose(items);
@@ -184,8 +185,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_5Days_conjuredManaCake() {
-    	Item[] items = new Item[] {
-                new Item("Conjured Mana Cake", 3, 6)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Conjured Mana Cake", 3, 6, ItemType.CONJURED)
     	};
     	int days = 5;
     	GildedRose app = new GildedRose(items);
@@ -199,8 +200,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_10Days_dexterityVest() {
-    	Item[] items = new Item[] {
-                new Item("+5 Dexterity Vest", 10, 20)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("+5 Dexterity Vest", 10, 20, ItemType.NORMAL)
     	};
     	int days = 10;
     	GildedRose app = new GildedRose(items);
@@ -214,8 +215,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_10Days_agedBrie() {
-    	Item[] items = new Item[] {
-                new Item("Aged Brie", 2, 0)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Aged Brie", 2, 0, ItemType.CONSUMABLE)
     	};
     	int days = 10;
     	GildedRose app = new GildedRose(items);
@@ -229,8 +230,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_10Days_elixirOfTheMongoose() {
-    	Item[] items = new Item[] {
-                new Item("Elixir of the Mongoose", 5, 7)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Elixir of the Mongoose", 5, 7, ItemType.NORMAL)
     	};
     	int days = 10;
     	GildedRose app = new GildedRose(items);
@@ -244,8 +245,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_10Days_sulfurasHandOfRagnaros() {
-    	Item[] items = new Item[] {
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Sulfuras, Hand of Ragnaros", 0, 80, ItemType.LEGENDARY)
     	};
     	int days = 10;
     	GildedRose app = new GildedRose(items);
@@ -259,8 +260,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_10Days_backstagePassesToATAFKAL80ETCConcert() {
-    	Item[] items = new Item[] {
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Backstage passes to a TAFKAL80ETC concert", 15, 20, ItemType.CONSUMABLE_WITH_EXPIRATION)
     	};
     	int days = 10;
     	GildedRose app = new GildedRose(items);
@@ -274,8 +275,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_10Days_conjuredManaCake() {
-    	Item[] items = new Item[] {
-                new Item("Conjured Mana Cake", 3, 6)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Conjured Mana Cake", 3, 6, ItemType.CONJURED)
     	};
     	int days = 10;
     	GildedRose app = new GildedRose(items);
@@ -289,8 +290,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_15Days_dexterityVest() {
-    	Item[] items = new Item[] {
-                new Item("+5 Dexterity Vest", 10, 20)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("+5 Dexterity Vest", 10, 20, ItemType.NORMAL)
     	};
     	int days = 15;
     	GildedRose app = new GildedRose(items);
@@ -304,8 +305,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_12Days_agedBrie() {
-    	Item[] items = new Item[] {
-                new Item("Aged Brie", 2, 0)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Aged Brie", 2, 0, ItemType.CONSUMABLE)
     	};
     	int days = 15;
     	GildedRose app = new GildedRose(items);
@@ -319,8 +320,8 @@ class GildedRoseTest {
         
     @Test
     void updateQuality_15Days_elixirOfTheMongoose() {
-    	Item[] items = new Item[] {
-                new Item("Elixir of the Mongoose", 5, 7)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Elixir of the Mongoose", 5, 7, ItemType.NORMAL)
     	};
     	int days = 15;
     	GildedRose app = new GildedRose(items);
@@ -334,8 +335,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_15Days_sulfurasHandOfRagnaros() {
-    	Item[] items = new Item[] {
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Sulfuras, Hand of Ragnaros", 0, 80, ItemType.LEGENDARY)
     	};
     	int days = 15;
     	GildedRose app = new GildedRose(items);
@@ -349,8 +350,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_15Days_backstagePassesToATAFKAL80ETCConcert() {
-    	Item[] items = new Item[] {
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Backstage passes to a TAFKAL80ETC concert", 15, 20, ItemType.CONSUMABLE_WITH_EXPIRATION)
     	};
     	int days = 15;
     	GildedRose app = new GildedRose(items);
@@ -364,8 +365,8 @@ class GildedRoseTest {
         
     @Test
     void updateQuality_15Days_conjuredManaCake() {
-    	Item[] items = new Item[] {
-                new Item("Conjured Mana Cake", 3, 6)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Conjured Mana Cake", 3, 6, ItemType.CONJURED)
     	};
     	int days = 15;
     	GildedRose app = new GildedRose(items);
@@ -379,8 +380,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_16Days_backstagePassesToATAFKAL80ETCConcert() {
-    	Item[] items = new Item[] {
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Backstage passes to a TAFKAL80ETC concert", 15, 20, ItemType.CONSUMABLE_WITH_EXPIRATION)
     	};
     	int days = 16;
     	GildedRose app = new GildedRose(items);
@@ -394,8 +395,8 @@ class GildedRoseTest {
     
     @Test
     void updateQuality_45Days_agedBrie() {
-    	Item[] items = new Item[] {
-                new Item("Aged Brie", 2, 0)
+    	MyItem[] items = new MyItem[] {
+                new MyItem("Aged Brie", 2, 0, ItemType.CONSUMABLE)
     	};
     	int days = 45;
     	GildedRose app = new GildedRose(items);
