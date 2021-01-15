@@ -1,7 +1,9 @@
-package com.gildedrose;
+package com.gildedrose.controller;
 
-class GildedRose {
-    Item[] items;
+import com.gildedrose.model.Item;
+
+public class GildedRose {
+    private Item[] items;
 
     public GildedRose(Item[] items) {
         this.items = items;
@@ -59,4 +61,12 @@ class GildedRose {
             }
         }
     }
+
+	public Item[] getItems() {
+		return items;
+	}
+
+	public void setItems(Item[] items) {
+		this.items = items;
+	}
 }
