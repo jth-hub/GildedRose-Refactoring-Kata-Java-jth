@@ -44,4 +44,13 @@ public class MyItemUtil {
     		item.quality--;
     	}
     }
+
+	public static void decreaseQualityConjured(MyItem item) {
+		decreaseQuality(item);
+		decreaseQuality(item);
+		if (item.sellIn < 0) {
+			decreaseQuality(item);
+			decreaseQuality(item);
+		}		
+	}
 }

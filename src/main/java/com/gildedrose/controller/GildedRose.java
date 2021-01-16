@@ -16,8 +16,10 @@ public class GildedRose {
         	if (!ItemType.LEGENDARY.equals(item.getType())) {
         		item.sellIn--; // decrease seelIn        		
         	}
-        	if (ItemType.NORMAL.equals(item.getType()) || ItemType.CONJURED.equals(item.getType())) {
+        	if (ItemType.NORMAL.equals(item.getType())) {
         		MyItemUtil.decreaseQualityNormal(item);
+        	} else if (ItemType.CONJURED.equals(item.getType())) { 
+        		MyItemUtil.decreaseQualityConjured(item);
         	} else if (ItemType.CONSUMABLE.equals(item.getType())) {
         		MyItemUtil.increaseQualityConsumable(item);
         	} else if (ItemType.CONSUMABLE_WITH_EXPIRATION.equals(item.getType())) {
