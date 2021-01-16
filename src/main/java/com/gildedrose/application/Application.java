@@ -22,7 +22,7 @@ public class Application {
 
         GildedRose app = new GildedRose(items);
 
-        int days = 15;
+        int days = 150;
         if (args.length > 0) {
             days = Integer.parseInt(args[0]) + 1;
         }

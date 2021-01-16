@@ -304,7 +304,7 @@ class GildedRoseTest {
     }
     
     @Test
-    void updateQuality_12Days_agedBrie() {
+    void updateQuality_15Days_agedBrie() {
     	MyItem[] items = new MyItem[] {
                 new MyItem("Aged Brie", 2, 0, ItemType.CONSUMABLE)
     	};
@@ -396,7 +396,7 @@ class GildedRoseTest {
     @Test
     void updateQuality_45Days_agedBrie() {
     	MyItem[] items = new MyItem[] {
-                new MyItem("Aged Brie", 2, 0, ItemType.CONSUMABLE)
+                new MyItem("Aged Brie", 3, 0, ItemType.CONSUMABLE)
     	};
     	int days = 45;
     	GildedRose app = new GildedRose(items);
@@ -404,7 +404,7 @@ class GildedRoseTest {
     		app.updateQuality();
     	}
     	assertEquals("Aged Brie", items[0].name);
-    	assertEquals(-43, items[0].sellIn);
+    	assertEquals(-42, items[0].sellIn);
     	assertEquals(50, items[0].quality);
     }
 }
