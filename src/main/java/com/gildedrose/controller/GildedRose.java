@@ -5,7 +5,7 @@ import com.gildedrose.model.enums.ItemType;
 import com.gildedrose.utils.MyItemUtil;
 
 public class GildedRose {
-    private MyItem[] items;
+    public MyItem[] items;
 
     public GildedRose(MyItem[] items) {
         this.items = items;
@@ -13,28 +13,18 @@ public class GildedRose {
 
     public void updateQuality() {
         for (MyItem item : items) {
-        	if (!ItemType.LEGENDARY.equals(item.getType())) {
+        	if (!ItemType.LEGENDARY.equals(item.type)) {
         		item.sellIn--; // decrease seelIn        		
         	}
-        	if (ItemType.NORMAL.equals(item.getType())) {
+        	if (ItemType.NORMAL.equals(item.type)) {
         		MyItemUtil.decreaseQualityNormal(item);
-        	} else if (ItemType.CONJURED.equals(item.getType())) { 
+        	} else if (ItemType.CONJURED.equals(item.type)) { 
         		MyItemUtil.decreaseQualityConjured(item);
-        	} else if (ItemType.CONSUMABLE.equals(item.getType())) {
+        	} else if (ItemType.CONSUMABLE.equals(item.type)) {
         		MyItemUtil.increaseQualityConsumable(item);
-        	} else if (ItemType.CONSUMABLE_WITH_EXPIRATION.equals(item.getType())) {
+        	} else if (ItemType.CONSUMABLE_WITH_EXPIRATION.equals(item.type)) {
         		MyItemUtil.increaseQualityConsumableWithExpiration(item);
         	} 
         }
     }
-    
-    
-
-	public MyItem[] getItems() {
-		return items;
-	}
-
-	public void setItems(MyItem[] items) {
-		this.items = items;
-	}
 }

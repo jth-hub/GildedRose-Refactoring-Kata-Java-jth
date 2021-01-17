@@ -15,7 +15,7 @@ class GildedRoseTest {
         MyItem[] items = new MyItem[] { new MyItem("foo", 0, 0, ItemType.NORMAL) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("foo", app.getItems()[0].name);
+        assertEquals("foo", app.items[0].name);
     }
     
     @Test
