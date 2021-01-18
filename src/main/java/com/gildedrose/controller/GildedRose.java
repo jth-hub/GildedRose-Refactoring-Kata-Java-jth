@@ -4,13 +4,26 @@ import com.gildedrose.model.MyItem;
 import com.gildedrose.model.enums.ItemType;
 import com.gildedrose.utils.MyItemUtil;
 
+/**
+ * The Class GildedRose.
+ */
 public class GildedRose {
+    
+    /** The items. */
     public MyItem[] items;
 
+    /**
+     * Instantiates a new gilded rose.
+     *
+     * @param items the items
+     */
     public GildedRose(MyItem[] items) {
         this.items = items;
     }
 
+    /**
+     * Update quality method which will update MyItem sellIn and Quality based on their type.
+     */
     public void updateQuality() {
         for (MyItem item : items) {
         	if (!ItemType.LEGENDARY.equals(item.type)) {
